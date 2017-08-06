@@ -1,0 +1,11 @@
+.ChatBox {
+  margin: auto;
+  padding-top: 25px;
+  width: 65%;
+}
+.InputForm {
+  padding-top: 10px;
+}
+.Input {
+  width: 100%;
+}
