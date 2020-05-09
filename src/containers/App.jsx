@@ -35,12 +35,14 @@ class App extends Component {
   }
 
   render() {
+    const { uid, username } = this.state;
+    
     return (
       <div className="App">
         <div className="App-header">
           <h2>catchup</h2>
         </div>
-        <ChatBox uid={this.state.uid} username={this.state.username}/>
+        <ChatBox uid={uid} username={username}/>
       </div>
     );
   }

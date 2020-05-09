@@ -5,11 +5,12 @@ import './ChatBox.css';
 import { Segment } from 'semantic-ui-react';
 import Messages from '../components/Messages';
 import InputForm from '../components/InputForm';
+import Username from '../components/Username';
 
 const scrollBoxStyles = {
   overflowY: "auto",
   minHeight: 250,
-  maxHeight: "calc(80vh - 65px)"
+  maxHeight: "calc(80vh - 80px)"
 }
 
 class ChatBox extends Component {
@@ -51,6 +52,7 @@ class ChatBox extends Component {
     const { uid, username } = this.props;
     return (
       <div className="ChatBox">
+        <Username username={username}/>
         <Segment loading={this.state.loading}>
           <div ref={(ref) => this.divScroll = ref} style={scrollBoxStyles}>
             <Messages messages={this.state.messages} />
