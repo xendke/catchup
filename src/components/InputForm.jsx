@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Input, Button, Icon } from 'semantic-ui-react';
-import * as firebase from 'firebase';
+import firebase from 'firebase/app';
+import 'firebase/database';
 
 class InputForm extends Component {
   state = {

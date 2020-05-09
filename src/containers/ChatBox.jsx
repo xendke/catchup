@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import * as firebase from 'firebase';
+import firebase from 'firebase/app';
+import 'firebase/database';
 import './ChatBox.css';
 
 import { Segment } from 'semantic-ui-react';
@@ -28,10 +29,6 @@ class ChatBox extends Component {
 
     messagesRef.on('child_added', (data) => {
       this.setState((prevState, props) => {
-        this.setState(() => ({
-          loading: false
-        }));
-
         const prevMessages = prevState.messages.slice();
         prevMessages.push({
           key: data.key,
@@ -40,7 +37,10 @@ class ChatBox extends Component {
         });
 
         return { messages: prevMessages };
-      });
+      }, this.setState(() => ({
+          loading: false
+        }))
+      );
     });
   }
 

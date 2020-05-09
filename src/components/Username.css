@@ -6,7 +6,6 @@ p {
 
 @media screen and (min-width: 800px) {
   p {
-		margin-bottom: 20px;
 		text-align: end;
   }
 }

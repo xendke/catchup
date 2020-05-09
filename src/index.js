@@ -6,11 +6,11 @@ import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
 // Components
-import App from 'containers/App';
+import App from './containers/App';
 
 // Firebase
-import * as firebase from 'firebase';
-import fbconfig from 'firebase/config';
+import * as firebase from 'firebase/app';
+import fbconfig from './firebase/config';
 firebase.initializeApp(fbconfig);
 
 ReactDOM.render(<App />, document.getElementById('root'));

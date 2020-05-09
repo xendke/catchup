@@ -5,7 +5,6 @@
 @media screen and (min-width: 800px) {
   .ChatBox {
     width: 65%;
-    padding-top: 20px;
   }
 }
 .InputForm {
