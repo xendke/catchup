@@ -25,15 +25,14 @@ class ChatBox extends Component {
           loading: false
         }));
 
-        var prevMessages = prevState.messages.slice();
-        const align = data.val().uid === props.uid ? 'right': 'left';
+        const prevMessages = prevState.messages.slice();
         prevMessages.push({
           key: data.key,
           data: data.val(),
-          align: align
+          align: data.val().uid === props.uid ? 'right': 'left'
         });
 
-        return {messages: prevMessages};
+        return { messages: prevMessages };
       });
     });
   }

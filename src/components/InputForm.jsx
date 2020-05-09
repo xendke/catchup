@@ -19,7 +19,7 @@ class InputForm extends Component {
       return;
     }
 
-    var newPostRef = this.messagesRef.push();
+    const newPostRef = this.messagesRef.push();
     newPostRef.set({
       text: this.state.input_text,
       uid: this.props.uid 
