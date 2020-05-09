@@ -1,7 +1,11 @@
 .ChatBox {
   margin: auto;
   padding-top: 25px;
-  width: 65%;
+}
+@media screen and (min-width: 800px) {
+  .ChatBox {
+    width: 65%;
+  }
 }
 .InputForm {
   padding-top: 10px;

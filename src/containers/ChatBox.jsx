@@ -6,6 +6,12 @@ import { Segment } from 'semantic-ui-react';
 import Messages from '../components/Messages';
 import InputForm from '../components/InputForm';
 
+const scrollBoxStyles = {
+  overflowY: "auto",
+  minHeight: 250,
+  maxHeight: "calc(80vh - 65px)"
+}
+
 class ChatBox extends Component {
   state = {
     messages: [],
@@ -46,7 +52,7 @@ class ChatBox extends Component {
     return (
       <div className="ChatBox">
         <Segment loading={this.state.loading}>
-          <div ref={(ref) => this.divScroll = ref} style={{overflowY: "auto", height:500}}>
+          <div ref={(ref) => this.divScroll = ref} style={scrollBoxStyles}>
             <Messages messages={this.state.messages} />
           </div>
         </Segment>
