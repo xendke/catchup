@@ -7,9 +7,17 @@ const Messages = (props) => (
     	props.messages.map((message) =>
         (
           <Segment size='small' key={message.key} textAlign={message.align}>
-            { message.align === "left" ? <div><Icon size='large' name='user circle' />{message.data.uid}</div> : null}
+            {
+              message.align === "left"
+                ? (
+                  <div>
+                    <Icon size='large' name='user circle' />
+                    {message.data.username || message.data.uid}
+                  </div> 
+                ) : null
+            }
             { message.data.text }
-            { message.align === "left" ? null : <Icon size='large' name='chevron left' />}
+            { message.align === "left" ? null : (<Icon size='large' name='chevron left'/>) }
           </Segment>
         )
       )

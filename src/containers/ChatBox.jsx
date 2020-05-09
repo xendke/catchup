@@ -42,6 +42,7 @@ class ChatBox extends Component {
   }
 
   render() {
+    const { uid, username } = this.props;
     return (
       <div className="ChatBox">
         <Segment loading={this.state.loading}>
@@ -49,7 +50,7 @@ class ChatBox extends Component {
             <Messages messages={this.state.messages} />
           </div>
         </Segment>
-        <InputForm uid={this.props.uid}/>
+        <InputForm uid={uid} username={username}/>
       </div>
     );
   }

@@ -15,14 +15,15 @@ class InputForm extends Component {
   handleButtonClick = (e) => {
     e.preventDefault();
 
-    if(this.state.input_text === "") {
+    if(this.state.input_text.trim() === "") {
       return;
     }
 
     const newPostRef = this.messagesRef.push();
     newPostRef.set({
       text: this.state.input_text,
-      uid: this.props.uid 
+      uid: this.props.uid,
+      username: this.props.username
     });
 
     this.setState(() => ({
