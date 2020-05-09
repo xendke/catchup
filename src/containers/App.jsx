@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import ChatBox from 'containers/ChatBox';
+import ChatBox from './ChatBox';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import { uniqueNamesGenerator, colors, animals } from 'unique-names-generator';
