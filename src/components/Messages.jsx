@@ -3,7 +3,7 @@ import { Icon, Segment } from 'semantic-ui-react';
 import './Messages.css';
 
 const Messages = (props) => {
-  const messageFromSelf = (message) => (message.align === "left");
+  const messageFromSelf = (message) => (message.align === "right");
 
   return (
     <Segment.Group>
@@ -13,17 +13,18 @@ const Messages = (props) => {
             <Segment size='small' key={message.key} textAlign={message.align}>
               {
                 messageFromSelf(message)
-                  ? (
+                  ? null
+                  : (
                     <div>
                       <Icon name='user circle' style={{color: 'red'}}/>
                       <span className="username">{message.data.username || message.data.uid}</span>
                     </div> 
-                  ) : null
+                  )
               }
-              <p className={`${messageFromSelf(message) ? 'message' : 'message-self'}`}>
+              <p className={`${messageFromSelf(message) ? 'message-self' : 'message'}`}>
                 { message.data.text }
               </p>
-              { messageFromSelf(message) ? null : (<Icon size='large' name='chevron left'/>) }
+              { messageFromSelf(message) ? (<Icon size='large' name='chevron left'/>) : null }
             </Segment>
           )
         )
