@@ -3,7 +3,7 @@ import './App.css';
 import ChatBox from './ChatBox';
 import firebase from 'firebase/app';
 import 'firebase/auth';
-import { uniqueNamesGenerator, colors, animals } from 'unique-names-generator';
+import { uniqueNamesGenerator, adjectives, animals } from 'unique-names-generator';
 
 class App extends Component {
   state = {
@@ -16,7 +16,7 @@ class App extends Component {
       if (user && user.displayName) {
         this.setState(() => ({ uid: user.uid, username: user.displayName}));
       } else if (user && !user.displayName) {
-        const uniqueName = uniqueNamesGenerator({ dictionaries: [ colors, animals ], length: 2 });
+        const uniqueName = uniqueNamesGenerator({ dictionaries: [ adjectives, animals ], length: 2 });
 
         user.updateProfile({
           displayName: uniqueName

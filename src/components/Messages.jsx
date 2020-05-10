@@ -1,5 +1,6 @@
 import React from 'react';
 import { Icon, Segment } from 'semantic-ui-react';
+import randomColor from 'randomcolor';
 import './Messages.css';
 
 const Messages = (props) => {
@@ -16,7 +17,7 @@ const Messages = (props) => {
                   ? null
                   : (
                     <div>
-                      <Icon name='user circle' style={{color: 'red'}}/>
+                      <Icon name='user circle' style={{color: randomColor({ seed: message.data.uid })}}/>
                       <span className="username">{message.data.username || message.data.uid}</span>
                     </div> 
                   )
