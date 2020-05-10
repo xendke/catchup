@@ -1,0 +1,12 @@
+.username {
+	font-weight: bold;
+}
+
+.message {
+	padding-top: 10px;
+	text-align: left;
+}
+
+.message-self {
+	display: inline;
+}
